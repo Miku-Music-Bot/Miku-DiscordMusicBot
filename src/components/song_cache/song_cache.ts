@@ -9,7 +9,7 @@ import { SongUID } from '../../shared/types/song_uid';
 export default class SongCache extends Component {
   // Property containing settings required to connect to component server
   get connection_settings() {
-    return { app_namespace: IPC_CONFIG.app_namespace, component_id: 'search' };
+    return { app_namespace: IPC_CONFIG.app_namespace, component_id: 'song_cache' };
   }
 
   /**

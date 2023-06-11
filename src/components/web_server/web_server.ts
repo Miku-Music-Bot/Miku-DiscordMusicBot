@@ -8,7 +8,7 @@ import { IPC_CONFIG } from '../../shared/config/config';
 export default class WebServer extends Component {
   // Property containing settings required to connect to component server
   get connection_settings() {
-    return { app_namespace: IPC_CONFIG.app_namespace, component_id: 'song_database' };
+    return { app_namespace: IPC_CONFIG.app_namespace, component_id: 'web_server' };
   }
 
   /**
