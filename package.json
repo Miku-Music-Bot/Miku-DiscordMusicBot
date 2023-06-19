@@ -6,10 +6,10 @@
   "scripts": {
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "prebuild": "npm run lint",
     "build": "tsc --build",
     "pretest": "npm run build",
     "test": "jest",
+    "posttest": "npm run lint",
     "prestart": "npm run build",
     "start": "node build/src/miku.js",
     "clean": "del-cli build"
