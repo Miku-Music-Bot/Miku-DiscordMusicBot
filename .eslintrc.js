@@ -42,9 +42,9 @@ module.exports = {
             
             { selector: "interface",                format: ["StrictPascalCase"],   leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
             
-            { selector: "objectLiteralMethod",      format: ["strictCamelCase"],    leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
+            { selector: "objectLiteralMethod",      format: [] },
 
-            { selector: "objectLiteralProperty",    format: ["snake_case"],         leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
+            { selector: "objectLiteralProperty",    format: [] },
 
             { selector: "parameter",                format: ["strictCamelCase"],    leadingUnderscore: "forbid",  trailingUnderscore: "forbid", types: ["function"]  },
             { selector: "parameter",                format: ["snake_case"],         leadingUnderscore: "forbid",  trailingUnderscore: "forbid", types: ["array", "boolean", "number", "string"]  },
@@ -60,7 +60,7 @@ module.exports = {
 
             { selector: "typeProperty",             format: null,                   leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
 
-            { selector: "variable",                 format: ["UPPER_CASE", "StrictPascalCase"], leadingUnderscore: "forbid",  trailingUnderscore: "forbid", modifiers: ["global", "const"] },
+            { selector: "variable",                 format: ["UPPER_CASE", "StrictPascalCase"], leadingUnderscore: "forbid", trailingUnderscore: "forbid", modifiers: ["global", "const"] },
             { selector: "variable",                 format: ["snake_case"],         leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
         ]
     }
