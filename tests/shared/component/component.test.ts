@@ -1,5 +1,7 @@
 import { Component } from '../../../src/shared/component/component';
 
+import valid_input_outputs from './valid_input_outputs.test';
+
 // Define a testable component and interface
 class TestComponent extends Component {
   get connection_settings() {
@@ -46,4 +48,35 @@ describe('createServer calls initializeComponent', () => {
 
     await expect(Component.createServer(test_component)).rejects.toBe('Failed Initialization');
   });
+});
+
+describe('valid return values', () => {
+  /**
+   * testReturn()
+   * Checks that the list of values to return are returned by interface exactly as they are returned by component
+   * @param to_return - Array of values to return and test
+   */
+  async function testReturn(to_return: Array<any>) {
+    let to_mock = test_component.testFunction;
+    for (const t of to_return) {
+      // check with both normal return and promise
+      to_mock = to_mock.mockReturnValueOnce(t);
+      to_mock = to_mock.mockResolvedValueOnce(t);
+    }
+
+    await Component.createServer(test_component);
+    const component_interface = await Component.createInterface(test_interface);
+
+    for (const t of to_return) {
+      await expect(component_interface.testFunction()).resolves.toEqual(t);
+      await expect(component_interface.testFunction()).resolves.toEqual(t);
+    }
+  }
+
+  test('valid numbers', async () => await testReturn(valid_input_outputs.numbers));
+  test('strings', async () => await testReturn(valid_input_outputs.strings));
+  test('booleans', async () => await testReturn(valid_input_outputs.bools));
+  test('arrays', async () => await testReturn(valid_input_outputs.arrays));
+  test('objects', async () => await testReturn(valid_input_outputs.objs));
+  test('others', async () => await testReturn(valid_input_outputs.other));
 });
