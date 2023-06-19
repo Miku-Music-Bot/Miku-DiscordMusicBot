@@ -57,8 +57,10 @@ export abstract class Component {
    * createServer()
    * Converts a component into a server
    * @param component - some component to make into a server
+   * @returns Promise that resolves to component once started
    */
-  static createServer<T extends Component>(component: T): T {
+  static async createServer<T extends Component>(component: T): Promise<T> {
+    await component.initializeComponent();
     return component;
   }
 
