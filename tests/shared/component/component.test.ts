@@ -1,5 +1,6 @@
 import { Component } from '../../../src/shared/component/component';
 
+import valid_input_outputs from './valid_input_outputs';
 import valid_input_outputs from './valid_input_outputs.test';
 
 // Define a testable component and interface
