@@ -60,7 +60,7 @@ module.exports = {
 
             { selector: "typeProperty",             format: null,                   leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
 
-            { selector: "variable",                 format: ["UPPER_CASE", "StrictPascalCase"], leadingUnderscore: "forbid", trailingUnderscore: "forbid", modifiers: ["global", "const"] },
+            { selector: "variable",                 format: [],                     leadingUnderscore: "forbid", trailingUnderscore: "forbid", modifiers: ["global", "const"] },
             { selector: "variable",                 format: ["snake_case"],         leadingUnderscore: "forbid",  trailingUnderscore: "forbid" },
         ]
     }
