@@ -1,7 +1,7 @@
 import { Component } from '../../../src/shared/component/component';
 
 import valid_input_outputs from './valid_input_outputs';
-import valid_input_outputs from './valid_input_outputs.test';
+import invalid_input_ouputs from './invalid_input_outputs';
 
 // Define a testable component and interface
 class TestComponent extends Component {
@@ -80,4 +80,18 @@ describe('valid return values', () => {
   test('arrays', async () => await testReturn(valid_input_outputs.arrays));
   test('objects', async () => await testReturn(valid_input_outputs.objs));
   test('others', async () => await testReturn(valid_input_outputs.other));
+});
+
+describe('invalid return values', () => {
+  test('return invalid number', async () => {
+    // test_component.initializeComponent
+    //   .mockResolvedValueOnce(Number.POSITIVE_INFINITY)
+    //   .mockResolvedValueOnce(Number.NEGATIVE_INFINITY)
+    //   .mockResolvedValueOnce(Number.NaN);
+    // await Component.createServer(test_component);
+    // const component_interface = await Component.createInterface(test_interface);
+    // await expect(component_interface.testFunction()).resolves.toBe(Number.POSITIVE_INFINITY);
+    // await expect(component_interface.testFunction()).resolves.toBe(Number.NEGATIVE_INFINITY);
+    // await expect(component_interface.testFunction()).resolves.toBe(Number.NaN);
+  });
 });
