@@ -2,7 +2,7 @@ let valid_input_outputs = {
   numbers: [0, 1, -1, 0.1, -0.1, Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER, Number.MAX_VALUE, Number.MIN_VALUE],
   strings: ['', '"', "'", '\\', '/', '\b', '\f', '\n', '\r', '\t', '\ubead', 'some test string'],
   bools: [true, false],
-  arrays: [] as Array<any>,
+  arrays: [[]] as Array<any>,
   objs: [{}],
   other: [null],
 };
